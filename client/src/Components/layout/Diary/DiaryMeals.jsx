@@ -53,7 +53,7 @@ const Styled = styled.section`
       max-width: 330px;
       /* Button */
       &--date {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
         padding: 0 5px;
       }
 
