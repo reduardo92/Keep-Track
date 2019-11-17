@@ -40,5 +40,3 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.listen(PORT, () => log(`server started on port ${PORT}`));
-
-log(process.env.mongoURI);
