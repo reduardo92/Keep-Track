@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
-const config = require('config');
+// const config = require('config');
 
 // @route   GET api/food
 // @access  Pulic
@@ -20,9 +20,9 @@ const foodData = data =>
 
 router.get('/', async (req, res) => {
   const { search } = req.query;
-  const api_url = config.get('food_url');
-  const api_id = config.get('api_id');
-  const api_key = config.get('api_key');
+  const api_url = process.env.food_url;
+  const api_id = process.env.api_id;
+  const api_key = process.env.api_key;
 
   try {
     if (!search || search === '')
@@ -48,10 +48,9 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  // const api_url = config.get('food_url');
-  const api_url = config.get('nutrition_url');
-  const api_id = config.get('api_id');
-  const api_key = config.get('api_key');
+  const api_url = process.env.nutrition_url;
+  const api_id = process.env.api_id;
+  const api_key = process.env.api_key;
 
   const { serving, size, foodId } = req.body;
 
