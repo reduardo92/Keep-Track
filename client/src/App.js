@@ -18,20 +18,14 @@ import FoodModal from './Components/layout/Food/FoodModal/FoodModal';
 import AlertMsg from './Components/Ui/AlertMsg/AlertMsg';
 import AlertState from './Components/Context/alert/AlertState';
 import AuthState from './Components/Context/auth/AuthState';
-import setAuthToken from './Components/Utility/setAuthToken';
 import PrivateRoute from './Components/routing/PrivateRoute';
 
-//   check if token is in localStrorage to load user
-if (localStorage.token) {
-  setAuthToken(localStorage.token);
-}
-
 const App = () => (
-  <>
-    <AuthState>
-      <ProileState>
-        <AlertState>
-          <Router>
+  <AuthState>
+    <ProileState>
+      <AlertState>
+        <Router>
+          <>
             <Navigation />
             <AlertMsg />
             <Switch>
@@ -45,11 +39,11 @@ const App = () => (
             </Switch>
             <Footer />
             <FoodModal />
-          </Router>
-        </AlertState>
-      </ProileState>
-    </AuthState>
-  </>
+          </>
+        </Router>
+      </AlertState>
+    </ProileState>
+  </AuthState>
 );
 
 export default App;

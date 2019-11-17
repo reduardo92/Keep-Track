@@ -6,7 +6,7 @@ import FontAwesome from '../../Ui/FontAwesome/FontAwesome';
 
 const FooterStyle = styled.footer`
   width: 100%;
-  min-height: 25vh;
+  min-height: 28vh;
   margin-top: 2em;
   padding: 1.5em 0 0.6em;
   text-align: center;
