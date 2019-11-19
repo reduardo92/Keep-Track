@@ -1,9 +1,7 @@
-const log = console.log;
-
 require('dotenv').config();
 
 const express = require('express');
-const connectDB = require('./db');
+const connectDB = require('./config/db');
 const cors = require('cors');
 const path = require('path');
 
@@ -34,9 +32,6 @@ if (process.env.NODE_ENV === 'production') {
   app.get('*', (req, res) =>
     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
   );
-  log('Node_env', process.env.NODE_ENV);
-} else {
-  log('Node_env', process.env.NODE_ENV);
 }
 
-app.listen(PORT, () => log(`server started on port ${PORT}`));
+app.listen(PORT, () => console.log(`server started on port ${PORT}`));
